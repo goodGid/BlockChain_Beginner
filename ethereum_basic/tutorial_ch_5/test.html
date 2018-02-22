@@ -1,0 +1,29 @@
+<!Doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script type="text/javascript" src="./lib/bignumber.min.js"></script>
+<script type="text/javascript" src="./lib/web3-light.js"></script>
+<script type="text/javascript">
+   
+    var Web3 = require('web3');
+    var web3 = new Web3();
+    web3.setProvider(new web3.providers.HttpProvider("http://163.152.161.111:8545"));
+	var vc = web3.eth.contract([ { "constant": true, "inputs": [], "name": "rr", "outputs": [ { "name": "", "type": "address[]", "value": [ "0x00000000000000036eaf79c12e96a3dc6f53426c", "0x000000000000000f235aa56dd96bda02acfb361e" ] } ], "payable": false, "type": "function" }, { "constant": false, "inputs": [ { "name": "add", "type": "address[]" } ], "name": "rrr", "outputs": [], "payable": false, "type": "function" }, { "constant": true, "inputs": [ { "name": "", "type": "uint256" } ], "name": "adrss", "outputs": [ { "name": "", "type": "address", "value": "0x00000000000000036eaf79c12e96a3dc6f53426c" } ], "payable": false, "type": "function" }, { "inputs": [], "payable": false, "type": "constructor" } ]).at("0xd0DBe9f87a986695bf6FBB223AeF8b132c89fA59");	
+
+	console.log(vc.rr());
+	var a= vc.rr();
+	console.log(a);
+	
+	web3.eth.defaultAccount = '0x68be1FC081c3dc08cA733608318056e45C0BCdcE';
+	web3.personal.unlockAccount('0x68be1FC081c3dc08cA733608318056e45C0BCdcE','1234');
+	console.log(vc.rrr(a));
+	
+	
+</script>
+<style>
+</style>
+</head>
+<body>
+</body>
+</html>
